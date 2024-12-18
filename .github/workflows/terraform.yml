@@ -1,6 +1,8 @@
 name: Terraform workflow
 
 on:
+  workflow_dispatch:
+
   push:
     branches:
       - main
@@ -27,7 +29,6 @@ jobs:
     steps:
       - name: say hello
         run: echo "hello world"
-        shell: bash
       
       - name: print everything in the working directory
         run: |
