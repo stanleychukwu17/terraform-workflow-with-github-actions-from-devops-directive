@@ -24,13 +24,13 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: infra
 
     steps:
       - name: say hello
         run: echo "hello world"
       
       - name: print everything in the working directory
+        working-directory: infra
         run: |
           pwd
           ls -a
