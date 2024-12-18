@@ -24,6 +24,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./infra
 
     steps:
       - name: Checkout
@@ -33,7 +34,6 @@ jobs:
         run: echo "hello world"
       
       - name: print everything in the working directory
-        working-directory: ./infra
         run: |
           pwd
           ls -a
