@@ -19,6 +19,6 @@ resource "aws_vpc" "main" {
   enable_dns_support   = true
 
   tags = {
-    Name = "${local.environment}-${local.common-tags["Project"]}-VPC"
+    Name = "${local.environment}-${local.common_tags["Project"]}-VPC"
   }
 }
