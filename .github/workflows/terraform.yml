@@ -26,11 +26,14 @@ jobs:
         shell: bash
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
       - name: say hello
         run: echo "hello world"
       
       - name: print everything in the working directory
-        working-directory: infra
+        working-directory: ./infra
         run: |
           pwd
           ls -a
