@@ -1,0 +1,40 @@
+name: Terraform workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types: [published]
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: say hello
+        run: echo "hello world"
+        shell: bash
+
+    #   - name: Checkout
+    #     uses: actions/checkout@v3
+    #   - name: Setup Terraform
+    #     uses: hashicorp/setup-terraform@v2
+    #     with:
+    #       terraform_version: 1.3.6
+    #   - name: Terraform Init
+    #     run: terraform init
+    #   - name: Terraform Validate
+    #     run: terraform validate
